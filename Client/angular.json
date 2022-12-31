@@ -29,8 +29,14 @@
             ],
             "styles": [
               "./node_modules/ngx-toastr/toastr.css",
+              "node_modules/ngx-spinner/animations/line-scale-party.css",
               "src/styles.scss"
             ],
+            "stylePreprocessorOptions": {
+              "includePaths": [
+                "./node_modules"
+              ]
+            },
             "scripts": []
           },
           "configurations": {
@@ -109,6 +115,5 @@
         }
       }
     }
-  },
-  "defaultProject": "Client"
+  }
 }
