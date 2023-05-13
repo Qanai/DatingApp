@@ -21,11 +21,13 @@ builder.Services.AddSwaggerGen(c =>
 
 var app = builder.Build();
 
+app.UsePathBase("/");
+
 //if (env.IsDevelopment())
 //{
 //app.UseDeveloperExceptionPage();
-app.UseSwagger();
-app.UseSwaggerUI(c => c.SwaggerEndpoint("/swagger/v1/swagger.json", "API v1"));
+//app.UseSwagger();
+//app.UseSwaggerUI(c => c.SwaggerEndpoint("/swagger/v1/swagger.json", "API v1"));
 //}
 
 app.UseMiddleware<ExceptionMiddleware>();
@@ -41,7 +43,6 @@ app.UseAuthentication();
 app.UseAuthorization();
 
 app.MapControllers();
-
 
 using var scope = app.Services.CreateScope();
 var services = scope.ServiceProvider;
