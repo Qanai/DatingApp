@@ -26,8 +26,10 @@
 
         <div class="col d-flex justify-content-end">
             <div class="btn-group">
-                <button type="button" class="btn btn-primary" name="orderBy" [(ngModel)]="userParams.orderBy" btnRadio="lastActive" (click)="loadMembers()">Last Active</button>
-                <button type="button" class="btn btn-primary" name="orderBy" [(ngModel)]="userParams.orderBy" btnRadio="created" (click)="loadMembers()">Newest Members</button>
+                <button type="button" class="btn btn-primary" name="orderBy" [(ngModel)]="userParams.orderBy"
+                    btnRadio="lastActive" (click)="loadMembers()">Last Active</button>
+                <button type="button" class="btn btn-primary" name="orderBy" [(ngModel)]="userParams.orderBy"
+                    btnRadio="created" (click)="loadMembers()">Newest Members</button>
             </div>
         </div>
     </form>
@@ -41,6 +43,7 @@
 
 <div class="d-flex justify-content-center" *ngIf="pagination">
     <pagination [boundaryLinks]="true" [totalItems]="pagination.totalItems" [itemsPerPage]="pagination.itemsPerPage"
-        [maxSize]="10" [(ngModel)]="pagination.currentPage" (pageChanged)="pageChanged($event)" previousText="&lsaquo;" nextText="&rsaquo;" firstText="&laquo;" lastText="&raquo;">
+        [maxSize]="10" [(ngModel)]="pagination.currentPage" (pageChanged)="pageChanged($event)" previousText="&lsaquo;"
+        nextText="&rsaquo;" firstText="&laquo;" lastText="&raquo;">
     </pagination>
 </div>

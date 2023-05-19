@@ -24,6 +24,7 @@ namespace API.Entities
         public string Introduction { get; set; }
         public ICollection<Photo> Photos { get; set; }
 
-        public int GetAge() => DateOfBirth.CalculateAge();
+        public List<UserLike> LikedByUsers { get; set; }
+        public List<UserLike> LikedUsers { get; set; }
     }
 }

@@ -10,7 +10,7 @@
             <input type="radio" class="form-check-input ms-3" value="female" formControlName="gender">Female
         </label>
     </div>
-    <app-text-input [formControl]="$any(registerForm.controls['userName'])" [label]="'Username'"></app-text-input>
+    <app-text-input [formControl]="$any(registerForm.controls['username'])" [label]="'Username'"></app-text-input>
     <app-text-input [formControl]="$any(registerForm.controls['knownAs'])" [label]="'Known As'"></app-text-input>
     <app-date-picker [formControl]="$any(registerForm.controls['dateOfBirth'])" [label]="'Date of Birth'"
         [maxDate]="maxDate"></app-date-picker>
