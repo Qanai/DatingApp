@@ -31,8 +31,9 @@ namespace API.Controllers
             this._photoService = photoService;
         }
 
+        //[Authorize(Roles = "Admin")]
         [HttpGet]
-        public async Task<ActionResult<PagedList<MemberDto>>> GetUsers([FromQuery]UserParams userParams)
+        public async Task<ActionResult<PagedList<MemberDto>>> GetUsers([FromQuery] UserParams userParams)
         {
             var currentUser = await _userRepository.GetUserByNameAsync(User.GetUserName());
             userParams.CurrentUserName = currentUser.UserName;
@@ -49,6 +50,7 @@ namespace API.Controllers
             return Ok(users);
         }
 
+        //[Authorize(Roles = "Member")]
         [HttpGet("{username}")]
         public async Task<ActionResult<MemberDto>> GetUser(string username)
         {
@@ -91,7 +93,7 @@ namespace API.Controllers
                 PublicId = result.PublicId
             };
 
-            if(user.Photos.Count == 0) photo.IsMain= true;
+            if (user.Photos.Count == 0) photo.IsMain = true;
 
             user.Photos.Add(photo);
 
@@ -139,7 +141,7 @@ namespace API.Controllers
             if (photo.PublicId != null)
             {
                 var result = await _photoService.DeletePhotoAsync(photo.PublicId);
-                if(result.Error != null) return BadRequest(result.Error.Message);
+                if (result.Error != null) return BadRequest(result.Error.Message);
             }
 
             user.Photos.Remove(photo);

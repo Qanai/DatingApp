@@ -12,6 +12,8 @@ import { MemberEditComponent } from './members/member-edit/member-edit.component
 import { MemberListComponent } from './members/member-list/member-list.component';
 import { MessagesComponent } from './messages/messages.component';
 import { MemberDetailResolver } from './resolvers/member-detail.resolver';
+import { AdminPanelComponent } from './admin/admin-panel/admin-panel.component';
+import { AdminGuard } from './guards/admin.guard';
 
 const routes: Routes = [
   { path: "", component: HomeComponent },
@@ -25,6 +27,7 @@ const routes: Routes = [
       { path: "member/edit", component: MemberEditComponent, canDeactivate: [PreventUnsavedChangesGuard] },
       { path: "lists", component: ListsComponent },
       { path: "messages", component: MessagesComponent },
+      { path: "admin", component: AdminPanelComponent, canActivate: [AdminGuard] },
     ]
   },
   { path: "errors", component: TestErrorsComponent },
