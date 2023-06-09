@@ -32,11 +32,11 @@
       </div>
     </div>
 
-    <form *ngIf="(accountSevice.currentUser$ | async) === null" #loginForm="ngForm" class="form-inline mt-2 mt-md-0"
+    <form *ngIf="(accountSevice.currentUser$ | async) === null" #loginForm="ngForm" class="d-flex"
       (ngSubmit)="login()" autocomplete="off">
-      <input class="form-control mr-sm-2" type="twxt" name="username" [(ngModel)]="model.username"
+      <input class="form-control me-sm-2" type="twxt" name="username" [(ngModel)]="model.username"
         placeholder="Username">
-      <input class="form-control mr-sm-2" type="password" name="password" [(ngModel)]="model.password"
+      <input class="form-control me-sm-2" type="password" name="password" [(ngModel)]="model.password"
         placeholder="Password">
       <button class="btn btn-outline-success" type="submit">LogIn</button>
     </form>
