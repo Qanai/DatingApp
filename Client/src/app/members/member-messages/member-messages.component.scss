@@ -6,8 +6,6 @@
     list-style: none;
     margin: 0;
     padding: 0;
-    overflow-y: auto;
-    height: 500px;
 
     li {
         margin-bottom: 0.8rem;
@@ -18,4 +16,9 @@
 
 .rounded-circle {
     max-height: 50px;
+}
+
+.scroller {
+    overflow-y: auto;
+    height: 535px;
 }
